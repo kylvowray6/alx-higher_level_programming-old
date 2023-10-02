@@ -1,0 +1,27 @@
+#!/bin/bash
+PYFILE="$PYFILE"
+if [ -z "$PYFILE" ]; then
+    echo "Error: Environment variable PYFILE is not set."
+    exit 1
+fi
+
+if [ ! -f "$PYFILE" ]; then
+    echo "Error: The specified Python file does not exist."
+    exit 1
+fi
+
+# Generate the output filename
+PYFILEC="${PYFILE%.py}.pyc"
+
+# Compile the Python script
+python3 -m compileall "$PYFILE"
+
+if [ -f "__pycache__/$PYFILEC" ]; then
+    mv "__pycache__/$PYFILEC" .
+    echo "Compiling $PYFILE ..."
+    rm -rf "__pycache__"
+else
+    echo "Error: Compilation failed."
+    exit 1
+fi
+
