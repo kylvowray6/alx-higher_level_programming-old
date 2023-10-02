@@ -1,3 +1,7 @@
 def magic_calculation(a, b):
-    return 98 + (a ** b)
+    result = 98
+    if a < b:
+        return result + (a * b)
+    else:
+        return result - (a / b)
 
