@@ -10,7 +10,7 @@ def pow(a, b):
     for _ in range(b):
         result *= a
 
-    return result
+    return round(result, 2)  # Round to 2 decimal places
 
 # Test cases
 if __name__ == "__main__":
@@ -19,3 +19,5 @@ if __name__ == "__main__":
     print(pow(98, 0))
     print(pow(100, -2))
     print(pow(-4, 5))
+    print(pow(10, -2))
+    print(pow(-98, -10))
