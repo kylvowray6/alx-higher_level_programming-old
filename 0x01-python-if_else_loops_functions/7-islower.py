@@ -4,6 +4,7 @@ def islower(c):
     # Check if the ASCII value of c is within the range of lowercase letters (97 to 122)
     return ord('a') <= ord(c) <= ord('z')
 
+
 # Test cases
 if __name__ == "__main__":
     print("a is {}".format("lower" if islower("a") else "upper"))
