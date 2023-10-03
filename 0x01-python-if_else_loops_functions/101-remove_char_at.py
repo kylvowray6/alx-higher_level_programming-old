@@ -6,6 +6,7 @@ def remove_char_at(str, n):
     else:
         return str
 
+
 # Test cases
 if __name__ == "__main__":
     print(remove_char_at("Best School", 3))
