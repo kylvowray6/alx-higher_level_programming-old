@@ -9,9 +9,23 @@ def uppercase(input_str):
             uppercase_char = char
         output_str += uppercase_char
 
-    print(output_str)
+    count_print = 0
+    for char in output_str:
+        if count_print < 2:
+            print("{}".format(char), end='')
+            count_print += 1
+        else:
+            print("{}".format(char))
+            count_print = 0
+
+    if count_print != 0:
+        print()
 
 # Test cases
 if __name__ == "__main__":
-    uppercase("best")
-    uppercase("Best School 98 Battery street")
+    uppercase("holberton")
+    uppercase("Holberton School")
+    uppercase("Holberton School, 98 battery street")
+    uppercase("")
+    uppercase(98)
+    uppercase("z")
