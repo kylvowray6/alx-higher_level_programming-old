@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+import py_compile
 import hidden_4
 
-
 if __name__ == "__main__":
-    module_names = dir(hidden_4)
-
+    compiled_module = py_compile.compile("hidden_4.pyc")
+    module_names = [name for name in dir(hidden_4) if not name.startswith("__")]
 
     for name in sorted(module_names):
-        if not name.startswith("__"):
-            print(name)
+        print(name)
